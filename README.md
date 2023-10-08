@@ -1,18 +1,23 @@
-# 개요
+# 1. 개요
 * 쿠버네티스 metrics-server 학습
 
-# 환경 구축
+<br/>
+
+# 2. 환경 구축
 * kind 클러스터 생성
 
 ```bash
 make install
 ```
 
-# 실습
-## 실습 시나리오
+<br/>
+
+
+# 3. 실습
+## 3.1 실습 시나리오
 * metrics server 설치 전후를 비교
 
-## metrics server가 없는 상황
+## 3.2 metrics server가 없는 상황
 * pod 메트릭 조회
 
 ```bash
@@ -37,7 +42,7 @@ $ kubectl top node
 $ kubectl top pod
 ```
 
-## metrics server 설치
+## 3.3 metrics server 설치
 * helm으로 설치
 
 ```bash
@@ -52,7 +57,7 @@ NAME                              READY   STATUS    RESTARTS   AGE
 metrics-server-596d577f98-zmmfx   1/1     Running   0          7m52s
 ```
 
-## metrics server가 있는 상황
+## 3.4 metrics server가 있는 상황
 * node 메트릭 조회
 
 ```bash
@@ -126,14 +131,17 @@ $ kubectl get --raw "/apis/metrics.k8s.io/v1beta1/pods"
 }
 ```
 
-# 실습 환경 삭제
+<br/>
+
+
+# 4. 실습 환경 삭제
 * kind cluster 삭제
 
 ```bash
 make uninstall
 ```
 
-# 참고자료
+# 5. 참고자료
 * Metrics API: https://github.com/feiskyer/kubernetes-handbook/blob/master/en/addons/metrics.md#metrics-api
 * Metrics server helm chart: https://github.com/kubernetes-sigs/metrics-server/tree/master/charts
 * Kind 디버깅 레벨 설정: https://blog.outsider.ne.kr/1659
